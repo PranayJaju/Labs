@@ -1,0 +1,81 @@
+$date
+	Sat Sep 10 16:15:23 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module AL3ii_tb $end
+$var wire 1 ! f $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$var reg 1 $ C $end
+$var reg 1 % D $end
+$scope module al3ii $end
+$var wire 1 " A $end
+$var wire 1 # B $end
+$var wire 1 $ C $end
+$var wire 1 % D $end
+$var wire 1 ! f $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#20
+1%
+#40
+0%
+1$
+#60
+1!
+1%
+#80
+0!
+0%
+0$
+1#
+#100
+1!
+1%
+#120
+0%
+1$
+#140
+1%
+#160
+0!
+0%
+0$
+0#
+1"
+#180
+1!
+1%
+#200
+0%
+1$
+#220
+1%
+#240
+1!
+0%
+0$
+1#
+#260
+1%
+#280
+0%
+1$
+#300
+0!
+1%
+#320
