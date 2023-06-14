@@ -1,0 +1,73 @@
+$date
+	Sat Oct  1 15:53:35 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module dec3to8_tb $end
+$var wire 8 ! Y [7:0] $end
+$var reg 1 " En $end
+$var reg 3 # W [2:0] $end
+$scope module Dec3to8 $end
+$var wire 1 " En $end
+$var wire 3 $ W [2:0] $end
+$var reg 8 % Y [7:0] $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 &
+b1 %
+b0 $
+b0 #
+1"
+b1 !
+$end
+#20
+b10 !
+b10 %
+b1000 &
+b1 #
+b1 $
+#40
+b100 !
+b100 %
+b1000 &
+b10 #
+b10 $
+#60
+b1000 !
+b1000 %
+b1000 &
+b11 #
+b11 $
+#80
+b10000 !
+b10000 %
+b1000 &
+b100 #
+b100 $
+#100
+b100000 !
+b100000 %
+b1000 &
+b101 #
+b101 $
+#120
+b1000000 !
+b1000000 %
+b1000 &
+b110 #
+b110 $
+#140
+b10000000 !
+b10000000 %
+b1000 &
+b111 #
+b111 $
+#160

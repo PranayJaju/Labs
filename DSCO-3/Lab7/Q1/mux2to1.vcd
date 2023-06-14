@@ -1,0 +1,55 @@
+$date
+	Sat Oct 22 15:30:23 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module mux2to1_tb $end
+$var wire 1 ! f $end
+$var reg 1 " s $end
+$var reg 2 # w [1:0] $end
+$scope module Mux2to1 $end
+$var wire 1 " s $end
+$var wire 2 $ w [1:0] $end
+$var reg 1 ! f $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 $
+b0 #
+0"
+0!
+$end
+#20
+b1 #
+b1 $
+#40
+1!
+b10 #
+b10 $
+#60
+b11 #
+b11 $
+#80
+0!
+1"
+b0 #
+b0 $
+#100
+1!
+b1 #
+b1 $
+#120
+0!
+b10 #
+b10 $
+#140
+1!
+b11 #
+b11 $
+#160

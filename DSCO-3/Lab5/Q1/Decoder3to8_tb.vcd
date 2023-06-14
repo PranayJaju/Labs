@@ -1,0 +1,101 @@
+$date
+	Sat Oct  1 15:32:53 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module decoder3to8_tb $end
+$var wire 8 ! Y [7:0] $end
+$var reg 3 " W [2:0] $end
+$scope module Decoder3to8 $end
+$var wire 3 # W [2:0] $end
+$var wire 8 $ Y [7:0] $end
+$scope module s1 $end
+$var wire 2 % A [1:0] $end
+$var wire 1 & En $end
+$var reg 4 ' D [3:0] $end
+$upscope $end
+$scope module s2 $end
+$var wire 2 ( A [1:0] $end
+$var wire 1 ) En $end
+$var reg 4 * D [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 *
+0)
+b0 (
+b1 '
+1&
+b0 %
+b1 $
+b0 #
+b0 "
+b1 !
+$end
+#20
+b10 !
+b10 $
+b10 '
+b1 %
+b1 (
+b1 "
+b1 #
+#40
+b100 !
+b100 $
+b100 '
+b10 %
+b10 (
+b10 "
+b10 #
+#60
+b1000 !
+b1000 $
+b1000 '
+b11 %
+b11 (
+b11 "
+b11 #
+#80
+b0 '
+0&
+b10000 !
+b10000 $
+b1 *
+b0 %
+b0 (
+1)
+b100 "
+b100 #
+#100
+b100000 !
+b100000 $
+b10 *
+b1 %
+b1 (
+b101 "
+b101 #
+#120
+b1000000 !
+b1000000 $
+b100 *
+b10 %
+b10 (
+b110 "
+b110 #
+#140
+b10000000 !
+b10000000 $
+b1000 *
+b11 %
+b11 (
+b111 "
+b111 #
+#160

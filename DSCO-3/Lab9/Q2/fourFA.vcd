@@ -1,0 +1,80 @@
+$date
+	Sat Nov  5 16:10:17 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module fourFA_tb $end
+$var wire 4 ! s [3:0] $end
+$var wire 1 " c $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$scope module FA4 $end
+$var wire 4 % a [3:0] $end
+$var wire 4 & b [3:0] $end
+$var wire 4 ' s [3:0] $end
+$var wire 1 ( c3 $end
+$var wire 1 ) c2 $end
+$var wire 1 * c1 $end
+$var wire 1 " c $end
+$scope module fa1 $end
+$var wire 1 * c $end
+$var wire 1 + s $end
+$var wire 1 , x $end
+$var wire 1 - y $end
+$var wire 1 . z $end
+$upscope $end
+$scope module fa2 $end
+$var wire 1 ) c $end
+$var wire 1 / s $end
+$var wire 1 0 x $end
+$var wire 1 1 y $end
+$var wire 1 * z $end
+$upscope $end
+$scope module fa3 $end
+$var wire 1 ( c $end
+$var wire 1 2 s $end
+$var wire 1 3 x $end
+$var wire 1 4 y $end
+$var wire 1 ) z $end
+$upscope $end
+$scope module fa4 $end
+$var wire 1 " c $end
+$var wire 1 5 s $end
+$var wire 1 6 x $end
+$var wire 1 7 y $end
+$var wire 1 ( z $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+07
+16
+05
+14
+03
+02
+11
+10
+0/
+0.
+1-
+0,
+1+
+0*
+1)
+1(
+b1 '
+b111 &
+b1010 %
+b111 $
+b1010 #
+1"
+b1 !
+$end
+#20

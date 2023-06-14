@@ -1,0 +1,125 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55e33304d080 .scope module, "DecomFA_tb" "DecomFA_tb" 2 4;
+ .timescale -9 -9;
+v0x55e333065880_0 .net "c", 0 0, L_0x55e3330660a0;  1 drivers
+v0x55e333065920_0 .net "s", 0 0, L_0x55e333065e60;  1 drivers
+v0x55e333065a10_0 .var "x", 0 0;
+v0x55e333065b00_0 .var "y", 0 0;
+v0x55e333065bf0_0 .var "z", 0 0;
+S_0x55e33304d210 .scope module, "ha" "DecomFA" 2 8, 3 1 0, S_0x55e33304d080;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /INPUT 1 "z";
+    .port_info 3 /OUTPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "c";
+L_0x55e3330660a0 .functor OR 1, L_0x55e333065da0, L_0x55e333065f80, C4<0>, C4<0>;
+v0x55e333065190_0 .net "c", 0 0, L_0x55e3330660a0;  alias, 1 drivers
+v0x55e333065270_0 .net "ct1", 0 0, L_0x55e333065da0;  1 drivers
+v0x55e333065330_0 .net "ct2", 0 0, L_0x55e333065f80;  1 drivers
+v0x55e333065430_0 .net "s", 0 0, L_0x55e333065e60;  alias, 1 drivers
+v0x55e333065500_0 .net "st", 0 0, L_0x55e333065d30;  1 drivers
+v0x55e333065640_0 .net "x", 0 0, v0x55e333065a10_0;  1 drivers
+v0x55e3330656e0_0 .net "y", 0 0, v0x55e333065b00_0;  1 drivers
+v0x55e333065780_0 .net "z", 0 0, v0x55e333065bf0_0;  1 drivers
+S_0x55e33304bc40 .scope module, "h1" "HalfAdder" 3 4, 3 10 0, S_0x55e33304d210;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "c";
+L_0x55e333065d30 .functor XOR 1, v0x55e333065a10_0, v0x55e333065b00_0, C4<0>, C4<0>;
+L_0x55e333065da0 .functor AND 1, v0x55e333065a10_0, v0x55e333065b00_0, C4<1>, C4<1>;
+v0x55e33304be90_0 .net "c", 0 0, L_0x55e333065da0;  alias, 1 drivers
+v0x55e333064900_0 .net "s", 0 0, L_0x55e333065d30;  alias, 1 drivers
+v0x55e3330649c0_0 .net "x", 0 0, v0x55e333065a10_0;  alias, 1 drivers
+v0x55e333064a60_0 .net "y", 0 0, v0x55e333065b00_0;  alias, 1 drivers
+S_0x55e333064ba0 .scope module, "h2" "HalfAdder" 3 5, 3 10 0, S_0x55e33304d210;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "c";
+L_0x55e333065e60 .functor XOR 1, L_0x55e333065d30, v0x55e333065bf0_0, C4<0>, C4<0>;
+L_0x55e333065f80 .functor AND 1, L_0x55e333065d30, v0x55e333065bf0_0, C4<1>, C4<1>;
+v0x55e333064e10_0 .net "c", 0 0, L_0x55e333065f80;  alias, 1 drivers
+v0x55e333064ed0_0 .net "s", 0 0, L_0x55e333065e60;  alias, 1 drivers
+v0x55e333064f90_0 .net "x", 0 0, L_0x55e333065d30;  alias, 1 drivers
+v0x55e333065060_0 .net "y", 0 0, v0x55e333065bf0_0;  alias, 1 drivers
+    .scope S_0x55e33304d080;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "DecomFA.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55e33304d080 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065a10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e333065bf0_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 24 "$display", "Test complete." {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "DecomFA_tb.v";
+    "./DecomFA.v";
