@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer</title>
+  <style>
+    label {
+        display: block;
+    }
+    #color-container {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<label>
+    <input type="radio" name="color" value="red" onclick="changeColor(this.value)"> Red
+</label>
+    
+<label>
+    <input type="radio" name="color" value="green" onclick="changeColor(this.value)"> Green
+</label>
+    
+<label>
+    <input type="radio" name="color" value="blue" onclick="changeColor(this.value)"> Blue
+</label>
+
+<div id="color-container"></div>
+
+<script>
+  function changeColor(selectedColor) {
+    const colorContainer = document.getElementById("color-container");
+    colorContainer.style.backgroundColor = selectedColor;
+  }
+</script>
+
+</body>
+</html>

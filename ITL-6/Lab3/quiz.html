@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz</title>
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    #quiz-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style> -->
+</head>
+<body>
+
+<div id="quiz-container">
+  <h2>Online Quiz</h2>
+  <p id="question"></p>
+  <div id="options-container"></div>
+  <button onclick="nextQuestion()">Next</button>
+  <p id="result"></p>
+</div>
+
+<script>
+  const quizData = [
+    {
+      question: "What is the capital of France?",
+      options: ["Berlin", "Madrid", "Paris", "Rome"],
+      correctAnswer: "Paris"
+    },
+    {
+      question: "Which planet is known as the Red Planet?",
+      options: ["Earth", "Mars", "Venus", "Jupiter"],
+      correctAnswer: "Mars"
+    },
+    {
+      question: "What is the largest mammal?",
+      options: ["Elephant", "Blue Whale", "Giraffe", "Lion"],
+      correctAnswer: "Blue Whale"
+    }
+    // Add more questions as needed
+  ];
+
+  let currQuesIdx = 0;
+  let score = 0;
+
+  function dispQues() {
+    const currentQuestion = quizData[currQuesIdx];
+    const quesEle = document.getElementById("question");
+    const optCont = document.getElementById("options-container");
+
+    quesEle.textContent = currentQuestion.question;
+    optCont.innerHTML = "";
+
+    currentQuestion.options.forEach((option, index) => {
+      const optionElement = document.createElement("button");
+      optionElement.textContent = option;
+      optionElement.onclick = () => checkAnswer(option);
+      optCont.appendChild(optionElement);
+    });
+  }
+
+  function checkAnswer(selAns) {
+    const currentQuestion = quizData[currQuesIdx];
+
+    if (selAns === currentQuestion.correctAnswer) {
+      score++;
+    }
+
+    if (currQuesIdx < quizData.length - 1) {
+      currQuesIdx++;
+      dispQues();
+    } else {
+      dispRes();
+    }
+  }
+
+  function dispRes() {
+    const resEle = document.getElementById("result");
+    resEle.textContent = `Your score: ${score} out of ${quizData.length}`;
+  }
+
+  function nextQuestion() {
+    if (currQuesIdx < quizData.length - 1) {
+      currQuesIdx++;
+      dispQues();
+    } else {
+      dispRes();
+    }
+  }
+
+  // Initial display
+  dispQues();
+</script>
+
+</body>
+</html>
