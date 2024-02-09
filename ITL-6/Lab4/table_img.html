@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Move Table and Image</title>
+    <style>
+      table {
+        width: 300px;
+        position: relative;
+        left: 0;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+      img {
+        display: block;
+        position: absolute;
+        left: 0;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: #da425b">
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+        <tr>
+          <td>Data 4</td>
+          <td>Data 5</td>
+          <td>Data 6</td>
+        </tr>
+        <tr style="background-color: #da425b">
+          <td>Data 7</td>
+          <td>Data 8</td>
+          <td>Data 9</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <img
+      id="moving-image"
+      src="https://via.placeholder.com/300"
+      alt="Placeholder Image"
+    />
+
+    <button id="move-button">Move Table and Image</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#move-button").click(function () {
+          var table = $("table");
+          var img = $("#moving-image");
+          // Check if the table is already at the rightmost position
+          if (
+            parseInt(table.css("left")) ===
+            $(window).width() - table.outerWidth()
+          ) {
+            // Move the table and image back to the left
+            table.css("left", "0");
+            img.css("left", "0");
+          } else {
+            // Move the table and image to the right
+            table.css("left", $(window).width() - table.outerWidth());
+            img.css("left", $(window).width() - table.outerWidth());
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

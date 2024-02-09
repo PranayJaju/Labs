@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card Designer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .row label {
+            width: 150px;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        #card-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #card {
+            width: 300px;
+            height: 400px; /* Adjusted for portrait format */
+            border: 2px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Birthday Card Designer</h1>
+        <div class="row">
+            <label for="bgC">Background Color:</label>
+            <input type="color" id="bgC">
+        </div>
+        <div class="row">
+            <label for="mg">Message:</label>
+            <input type="text" id="mg">
+        </div>
+        <div class="row">
+            <label for="font">Font Family:</label>
+            <select id="font">
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="Times New Roman, serif">Times New Roman</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="fS">Font Size:</label>
+            <input type="number" id="fS" min="10" max="50" value="24">
+        </div>
+        <div class="row">
+            <label for="fC">Font Color:</label>
+            <input type="color" id="fC">
+        </div>
+        <div class="row">
+            <label for="bS">Border Style:</label>
+            <select id="bS">
+                <option value="solid">Solid</option>
+                <option value="dotted">Dotted</option>
+                <option value="dashed">Dashed</option>
+                <option value="double">Double</option>
+            </select>
+        </div>
+        <div class="row">
+            <button id="preview">Preview Card</button>
+        </div>
+    </div>
+
+    <div id="card-container">
+        <div id="card">
+            <div id="text"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#preview').click(function(){
+                var bgC = $('#bgC').val();
+                var mg = $('#mg').val();
+                var font = $('#font').val();
+                var fS = $('#fS').val() + 'px';
+                var fC = $('#fC').val();
+                var bS = $('#bS').val();
+
+                $('#card').css({
+                    'background-color': bgC,
+                    'border-style': bS
+                });
+                $('#text').text(mg).css({
+                    'font-family': font,
+                    'font-size': fS,
+                    'color': fC
+                });
+            });
+        });
+    </script>
+</body>
+</html>

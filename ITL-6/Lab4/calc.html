@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        #calculator {
+            width: 340px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #76e6e6;
+            width: 70px;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <input type="text" id="num1" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter second number">
+    <div id="result"></div>
+    <button id="add">+</button>
+    <button id="subtract">-</button>
+    <button id="multiply">*</button>
+    <button id="divide">/</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#add").click(function(){
+            calculate("add");
+        });
+        $("#subtract").click(function(){
+            calculate("subtract");
+        });
+        $("#multiply").click(function(){
+            calculate("multiply");
+        });
+        $("#divide").click(function(){
+            calculate("divide");
+        });
+        
+        function calculate(operation) {
+            var num1 = parseFloat($("#num1").val());
+            var num2 = parseFloat($("#num2").val());
+            var result;
+            switch(operation) {
+                case "add":
+                    result = num1 + num2;
+                    break;
+                case "subtract":
+                    result = num1 - num2;
+                    break;
+                case "multiply":
+                    result = num1 * num2;
+                    break;
+                case "divide":
+                    if (num2 !== 0) {
+                        result = num1 / num2;
+                    } else {
+                        result = "Cannot divide by zero";
+                    }
+                    break;
+            }
+            $("#result").text("Result: " + result);
+        }
+    });
+</script>
+
+</body>
+</html>

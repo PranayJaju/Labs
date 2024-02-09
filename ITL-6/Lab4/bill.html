@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill Generator</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+
+<label for="brand">Select Brand:</label>
+<select id="brand">
+    <option value="HP">HP</option>
+    <option value="Nokia">Nokia</option>
+    <option value="Samsung">Samsung</option>
+    <option value="Motorola">Motorola</option>
+    <option value="Apple">Apple</option>
+</select>
+
+<p>Select Category:</p>
+<input type="checkbox" id="mobile" value="Mobile" /> <label for="mobile">Mobile</label>
+<input type="checkbox" id="laptop" value="Laptop" /> <label for="laptop">Laptop</label>
+
+<label for="quantity">Enter Quantity:</label>
+<input type="number" id="quantity" min="1" value="1" />
+
+<button id="calcBill">Produce Bill</button>
+
+<script>
+    $(document).ready(function() {
+        $('#calcBill').click(function() {
+            var brand = $('#brand').val();
+            var mobile = $('#mobile').prop('checked');
+            var laptop = $('#laptop').prop('checked');
+            var quantity = parseInt($('#quantity').val());
+
+            var totalAmount = 0;
+
+            // Base price for each item
+            var prices = {
+                HP: 500,
+                Nokia: 300,
+                Samsung: 700,
+                Motorola: 400,
+                Apple: 1000
+            };
+
+            // Adding price based on brand selected
+            totalAmount += prices[brand] * quantity;
+
+            // Additional price if Mobile or Laptop category is selected
+            if (mobile) {
+                totalAmount += 50 * quantity; // Price for mobile
+            }
+            if (laptop) {
+                totalAmount += 100 * quantity; // Price for laptop
+            }
+
+            // Display total amount
+            alert("Total Amount: $" + totalAmount.toFixed(2));
+        });
+    });
+</script>
+
+</body>
+</html>
